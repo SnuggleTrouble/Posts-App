@@ -1,0 +1,33 @@
+<link rel='stylesheet' href='/stylesheets/addPost.css' />
+<div class='container'>
+  <h1>Add post</h1>
+  <div class='content'>
+    <form
+      class='postForm'
+      action={{concat '/submitUpdatePost/' id}}
+      method='post'
+    >
+      <label for='img'>Image</label>
+      <input id='img' type='text' name='img' value={{post.img}} />
+      <label for='title'>Title *</label>
+      {{!-- you must have the post.title between quotes --}}
+      <input
+        class='titleInput'
+        id='title'
+        type='text'
+        name='title'
+        value="{{post.title}}"
+      />
+      <label for='body'>Body *</label>
+      {{!-- do not have extra space between the post.body and text area tags --}}
+      <textarea
+        class='bodyInput'
+        id='body'
+        type='text'
+        name='body'
+      >{{post.body}}</textarea>
+      <button class='submitBtn' type='submit'>Submit</button>
+    </form>
+  </div>
+</div>
+<script src='/js/addPost.js'></script>

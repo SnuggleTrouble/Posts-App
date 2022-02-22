@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/stylesheets/addPosts.css">
+<div class="container">
+  <h1>Add post</h1>
+  {{#if errors}}
+  <ul class="errors">
+      {{#each errors}}
+      <li>{{this}}</li>
+      {{/each}}
+  </ul>
+  {{/if}}
+
+  {{#if data}}
+    <ul class='success'>
+      <li>The post was successful</li>
+    </ul>
+  {{/if}}
+
+  <div class="content">
+    <form class="postForm" action="/submitPost" method="post">
+      <label for="img">Image</label>
+      <input id="img" type="text" name="img" />
+      <label for="title">Title *</label>
+      <input class="titleInput" id="title" type="text" name="title" />
+      <label for="body">Body *</label>
+      <textarea class="bodyInput" id='body' type='text' name='body'></textarea>
+      <button class="submitBtn" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+<script src="/js/addPost.js"></script>

@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/stylesheets/posts.css">
+<div class="container">
+  <h1>Posts</h1>
+  <div class="content">
+    {{#each posts}}
+      <div class="post">
+        <img src="{{this.img}}" />
+        <h2>{{this.title}}</h2>
+        <p>{{this.body}}</p>
+        <div class="actions">
+          <form action={{concat '/deletePost/' this.id}} method="post">
+          <button type="submit">Delete</button>
+        </form>
+        <form action={{concat '/editPost/' this.id}} method='post'>
+          <button type='submit'>Edit</button>
+        </form>
+        </div>
+      </div>
+    {{else}}
+      <span>There are no posts to show</span>
+    {{/each}}
+  </div>
+</div>
